@@ -45,7 +45,7 @@ app.use(passport.session());  // Autentificacion con Google
 app.use("/api/auth", authRoutes); // Autentificacion 
 app.use("/api/profile", profileRoutes); // Perfil de usuario
 app.use("/api/search", searchRoutes); // Busqueda 
-app.use("/api/exchanges", exchangeRoutes); // Intermcabios
+app.use("/api/exchanges", exchangeRoutes); // Intercambios
 app.use("/api/messages", messageRoutes); //  Ruta para historial de mensajes
 app.use("/api/chats", chatList);
 

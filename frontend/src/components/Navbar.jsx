@@ -12,11 +12,6 @@ function Navbar() {
             </div>  
             <ul className="flex gap-6">
                 <li>
-                <Link to="/" className="hover:text-color8">
-                    Home
-                </Link>
-                </li>
-                <li>
                 <Link to="/profile" className="hover:text-color8">
                     Perfil
                 </Link>
@@ -39,6 +34,11 @@ function Navbar() {
                 <li>
                 <Link to="/history" className="hover:text-color8">
                     Historial
+                </Link>
+                </li>
+                <li>
+                <Link to="/" className="hover:text-color8">
+                    Cerrar Sesión
                 </Link>
                 </li>
             </ul>

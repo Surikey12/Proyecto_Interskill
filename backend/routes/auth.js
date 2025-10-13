@@ -127,7 +127,7 @@ router.get(
     const token = jwt.sign({ id: req.user.id }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
     // Redirigir al frontend con el token
-    res.redirect(`http://localhost:3000/profile?token=${token}`);
+    res.redirect(`http://localhost:3000/profile?token=${token}&userId=${req.user.id}&name=${encodeURIComponent(req.user.name)}`);
   }
 );
 

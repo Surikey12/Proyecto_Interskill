@@ -110,6 +110,8 @@ router.get("/history", authMiddleware, async (req, res) => {
           e.skill_requested,
           e.status,
           e.updated_at,
+          e.sender_id,
+          e.received_id,
           sender.name AS senderName,
           receiver.name AS receiverName
        FROM exchanges e
@@ -120,7 +122,7 @@ router.get("/history", authMiddleware, async (req, res) => {
        ORDER BY e.updated_at DESC`,
       [userId, userId]
     );
-
+    //console.log("Historial obtenido:", rows);
     res.json(rows);
   } catch (error) {
     console.error("Error al obtener historial:", error);

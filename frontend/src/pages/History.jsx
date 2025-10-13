@@ -48,17 +48,9 @@ function Historial() {
           <div className="grid gap-4 md:grid-cols-2">
             {history.map((exchange) => {
               // Determina con quién fue el intercambio
-              const withPerson =
-                exchange.senderName === exchange.receiverName
-                  ? exchange.senderName
-                  : exchange.senderName === currentUserId
-                  ? exchange.receiverName
-                  : exchange.senderName;
-
-              // Determina si tú lo enviaste o recibiste
-              const sentByUser = exchange.senderName === currentUserId;
+              const sentByUser = exchange.sender_id === currentUserId;
+              const withPerson = sentByUser ? exchange.receiverName : exchange.senderName;
               const actionText = sentByUser ? "Intercambiaste" : "Aceptaste intercambiar";
-
               return (
                 <div
                   key={exchange.id}
@@ -83,7 +75,7 @@ function Historial() {
                           : "text-red-600 font-semibold"
                       }`}
                     >
-                      {exchange.status}
+                      {exchange.status === "accepted" ? "Aceptado" : "Rechazado"}
                     </span>
                   </p>
                   <p className="text-xs text-gray-500 mt-2">
