@@ -22,7 +22,7 @@ Configuración del entorno
 Antes de ejecutar el proyecto, asegúrate de crear el archivo `.env` en el **backend**, con las siguientes variables:
 
 ```env
-# Archivo: backend/.env
+# Archivo: /.env
 
 PORT=5000
 JWT_SECRET=tu_clave_secreta

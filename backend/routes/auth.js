@@ -124,7 +124,7 @@ router.get(
   passport.authenticate("google", { failureRedirect: "http://localhost:3000/login" }),
   (req, res) => {
     // Crear token
-    const token = jwt.sign({ id: req.user.id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+    const token = jwt.sign({ id: req.user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     // Redirigir al frontend con el token
     res.redirect(`http://localhost:3000/profile?token=${token}&userId=${req.user.id}&name=${encodeURIComponent(req.user.name)}`);
