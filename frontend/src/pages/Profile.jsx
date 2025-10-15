@@ -37,8 +37,8 @@ function Profile() {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        //console.log("token en frontend: ", token); // Verifica que el token se está obteniendo
-        //console.log("headers enviados:", { Authorization: `Bearer ${token}` }); //Se esta enviando?
+        console.log("token en frontend: ", token); // Verifica que el token se está obteniendo
+        console.log("headers enviados:", { Authorization: `Bearer ${token}` }); //Se esta enviando?
         const res = await axios.get("http://localhost:5000/api/profile/me", {
           headers: { Authorization: `Bearer ${token}` }
         });
